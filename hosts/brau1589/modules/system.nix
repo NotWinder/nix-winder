@@ -1,4 +1,6 @@
-{
+{ lib
+, ...
+}: {
   config = {
     custom.system = {
       services = {
@@ -54,5 +56,8 @@
       networkmanager.dns = "none";
       nameservers = [ "127.0.0.1" ];
     };
+
+    systemd.timers."snapshot-home".enable = lib.mkForce false;
+    systemd.services."snapshot-home".enable = lib.mkForce false;
   };
 }
