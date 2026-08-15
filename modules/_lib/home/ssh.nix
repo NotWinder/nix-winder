@@ -1,11 +1,10 @@
-{ config
-, osConfig
-, ...
-}:
-let
-  sys = osConfig.custom.system;
-in
 {
+  config,
+  osConfig,
+  ...
+}: let
+  sys = osConfig.custom.system;
+in {
   config = {
     programs.ssh = {
       enable = true;
@@ -37,10 +36,6 @@ in
           user = "root";
           port = 2222;
           proxyJump = "comp-starhub-old";
-        };
-        comp-piri = {
-          hostname = "89.46.232.110";
-          user = "root";
         };
         comp-ghahreman = {
           hostname = "78.157.40.195";
@@ -132,6 +127,11 @@ in
         };
         comp-tools = {
           hostname = "10.10.1.43";
+          user = "root";
+          proxyJump = "comp-proxmox";
+        };
+        comp-nexus-01 = {
+          hostname = "10.10.1.71";
           user = "root";
           proxyJump = "comp-proxmox";
         };
