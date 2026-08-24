@@ -47,6 +47,7 @@ in
           "/etc/nixos"
           "/etc/nix"
           "/etc/NetworkManager/system-connections"
+          "/etc/ipsec.d"
           "/etc/secureboot"
           "/var/db/sudo"
           "/var/lib/flatpak"
